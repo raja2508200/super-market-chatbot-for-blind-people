@@ -1,0 +1,100 @@
+ {"intents":
+[
+    
+    
+    {
+    "tag":"welcome",
+    "patterns": ["hi", "hello","hi there"],
+    "responses":["Welcome to our supermarket! How can I assist you today?"]
+   },
+
+   {
+    "tag":"products",
+    "patterns": [ "what are the products are available?","what sections are there","What goods are available?","What goods are currently available?"],
+    "responses":["vegetable,fruits,dairy,meat"]
+   },
+
+   {
+    "tag":"vegetable",
+    "patterns": [ "how can i go to the vegetable area"],
+    "responses":["Walk straight ahead, take a left turn, continue straight, and you will reach the vegetable section."]
+   },
+
+   {
+    "tag":"vegetablelist",
+    "patterns": ["What vegetables are available?", "i need vegetable list"],
+    "responses":["Tomato 15 rupees per kg, onion 40 rupees per kg, potato 30 rupees per kg, carrot 25 rupees per kg,  cucumber 35 rupees per kg, brinjal 40 rupees per kg"]
+   },
+
+   {
+    "tag":"fruits",
+    "patterns": [ "how can i go to the fruits area"],
+    "responses":["Proceed straight, take a left turn, continue forward, and you'll find yourself at the fruits section."]
+   },
+
+   {
+    "tag":"fruitslist",
+    "patterns": ["what fruits are available?", "i need fruits list"],
+    "responses":["Apple 50 rupees per kg, banana 35 rupees per kg, orange 45 rupees per kg, mango 60 rupees per kg, pineapple 55 rupees per kg, grapes 70 rupees per kg."]
+   },
+
+
+   {
+    "tag": "meat",
+    "patterns": ["how can I go to the meat section?"],
+    "responses": ["Proceed straight ahead, take a right turn, continue forward, and you'll reach the meat section."]
+},
+
+{
+    "tag": "meatlist",
+    "patterns": ["What meats are available?", "I need the meat list."],
+    "responses": ["Chicken 120 rupees per kg, mutton 300 rupees per kg, beef 250 rupees per kg, pork 180 rupees per kg."]
+},
+{
+    "tag": "dairy",
+    "patterns": ["How can I find the dairy section?"],
+    "responses": ["Walk straight ahead, take a right turn, continue forward, and you'll reach the dairy section."]
+},
+
+{
+    "tag": "dairylist",
+    "patterns": ["What dairy items are available?", "Can I get the dairy products list?"],
+    "responses": ["Milk 50 rupees per liter, yogurt 40 rupees per kg, cheese 200 rupees per kg, butter 120 rupees per 250 grams."]
+},
+
+{
+    "tag": "bill",
+    "patterns": ["i need my bill", "tell me totall amount"],
+    "responses": ["bill"]
+},
+
+{
+    "tag": "remove",
+    "patterns": ["i want to remove some things", "I want to eliminate a few items.","I would like to eliminate some stuff"],
+    "responses": ["remove"]
+},
+
+{
+    "tag": "update",
+    "patterns": ["i want to add some things", "I want to update a few items.","I would like to ad some stuff"],
+    "responses": ["add"]
+},
+
+{
+    "tag": "receipt",
+    "patterns": [ "my purchase over","i need my receipt"],
+    "responses": ["receipt"]
+},
+
+
+{
+    "tag": "",
+    "patterns": [""],
+    "responses": ["unknown input","cannot understand your input ","Sorry, I can't understand your input"]
+}
+
+
+
+]
+}
+

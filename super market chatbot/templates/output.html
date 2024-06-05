@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+      .mic {
+        width: 500px; /* Adjust width as needed */
+        height: 500px; /* Adjust height as needed */
+        background-color: #81c8da;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 20px; 
+        right: 20px; 
+        display: none; 
+      }
+      
+  
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+  
+      .blink {
+        animation: blink 1s infinite;
+      }
+  
+      a {
+        color: #e66814;
+      }
+      body {
+        background-image: url('static/index (2).jpg');
+        background-size: cover;
+        background-position: center;
+       
+    }
+  
+    .cam{
+      font-size: 200px;
+      margin-left:45%;
+      margin-top:10%;
+    }
+    table {
+        width: 100%;    
+        border-collapse: collapse; 
+    }
+
+    th {
+        border: 1px solid #dddddd; 
+        text-align: left;
+        padding: 8px;
+    }
+
+    td {
+        border: 1px solid #dddddd; 
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2; 
+    }
+    .table1 {
+        background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+        backdrop-filter: blur(5px); /* Apply a blur effect */
+    }
+    
+    </style>
+  </head>
+  <body>
+    <div>
+        <center>
+            
+        <h1>Receipt</h1>
+
+        
+
+<div class="table1">
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product, details in l.items() %}
+                <tr>
+                    <td>{{ product }}</td>
+                    <td>{{ details[0] }} {{ details[1] }}</td>
+                    <td>{{ details[2] }} {{ details[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+<h1>Totall amount</h1>
+        <p>{{j}}.rupees</p>
+
+    </div>
+
+
+    </center>
+
+        {% if audio_file %}
+        <audio id="response-audio" controls autoplay style="display: none;">
+       <source src="{{ url_for('static', filename=audio_file) }}" type="audio/mp3"> Your browser does not support the audio element.
+    </audio>   
+        {% endif %}
+    </div>
+    
+    <div class="cam">
+    
+        <a href="/start" id="touchLink"> <i class="fas fa-microphone"></i></a>
+        
+        </div>
+
+<div>
+  {% if audio_file %}
+  <audio id="response-audio" controls autoplay style="display: none;">
+    <source src="{{ url_for('static', filename=audio_file) }}" type="audio/mp3"> Your browser does not support the audio element.
+  </audio>
+  {% endif %}
+</div>
+
+<script>
+    // Get the link element
+    var link = document.getElementById("touchLink");
+  
+    // Get the microphone icon
+    var micIcon = document.querySelector(".fa-microphone");
+  
+    // Get the audio element
+    var audio = document.getElementById("response-audio");
+  
+    // Function to toggle blinking effect on microphone icon
+    function toggleBlinking() {
+      micIcon.classList.toggle("blink");
+    }
+  
+    // Add event listener to detect when audio starts playing
+    audio.addEventListener("play", function() {
+      // Show "Speak now" message
+      micIcon.style.display = "block";
+  
+      // Start blinking
+      toggleBlinking();
+    });
+  
+    // Add event listener to detect when audio ends
+    audio.addEventListener("ended", function() {
+      // Stop blinking
+      toggleBlinking();
+  
+      // Hide microphone icon
+      micIcon.style.display = "block";
+      micIcon.innerText = " ";
+  
+    });
+  
+    // Add a click event listener to the entire document
+    document.addEventListener("click", function(event) {
+      // Check if the clicked element is the link
+      if (event.target === link) {
+        // If it is, do nothing, let the default link behavior happen
+      } else {
+        // If it's not the link, simulate a click on the link
+        link.click();
+      }
+    });
+  </script>
+</html>

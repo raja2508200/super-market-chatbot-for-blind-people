@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            /* Specify the background image URL */
+            background-image: url('static/input.jpg');
+            /* Set background properties for covering the entire viewport */
+            background-size: cover;
+            background-position: center;
+            /* Ensure content is visible on top of the background */
+           
+        }
+
+        .mic {
+            width: 500px;
+            height: 5000px;
+            background-color: #4285F4;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: none; /* Initially hidden */
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+        a {
+            font-size: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="/start" id="touchLink"> <i class="fas fa-microphone"></i></a>
+
+<script>
+    // Get the link element
+    var link = document.getElementById("touchLink");
+
+    // Add a click event listener to the entire document
+    document.addEventListener("click", function(event) {
+        // Check if the clicked element is the link
+        if (event.target === link) {
+            // If it is, do nothing, let the default link behavior happen
+        } else {
+            // If it's not the link, simulate a click on the link
+            link.click();
+        }
+    });
+</script>
+
+</body>
+</html>
